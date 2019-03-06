@@ -12,6 +12,9 @@ pipeline {
       }
     }
     stage('Package & Publish') {
+      environment {
+        Envt = 'Scratch'
+      }
       parallel {
         stage('Package & Publish') {
           steps {
@@ -41,6 +44,9 @@ pipeline {
       }
     }
     stage('Deploy QA') {
+      environment {
+        Envt = 'Scratch'
+      }
       parallel {
         stage('Deploy QA') {
           steps {
